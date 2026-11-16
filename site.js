@@ -47,8 +47,7 @@ function setUpCatalog(catalog) {
       if (!card.hidden) card.setAttribute("href", card.getAttribute("href").split("?", 1)[0] + "?" + context);
     }
     for (const filter of filters) filter.setAttribute("aria-pressed", String(filter.dataset.filter === category));
-    const projectLabel = matches.length === 1 ? "project" : "projects";
-    result.textContent = matches.length ? matches.length + " " + projectLabel : "No projects found";
+    result.textContent = matches.length ? `找到 ${matches.length} 个项目` : "未找到项目";
     empty.hidden = matches.length > 0;
     pager.hidden = pages < 2;
     pageLabel.textContent = page + " / " + pages;
