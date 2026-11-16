@@ -474,8 +474,7 @@ h1, h2, h3, h4, p, figure, dl { margin: 0; }
 }
 .tool-mark--photoshop { background: #001e36; color: #49b5ff; }
 .tool-mark--illustrator { background: #330e08; color: #ffab46; }
-.tool-mark--jianying { background: #272623; color: #fffaf6; }
-.tool-mark--gpt { background: #e4e5d7; color: #505b47; }
+.tool-app-icon { object-fit: contain; }
 
 .about-art { position: relative; min-height: 100%; overflow: hidden; background: #d8c9b8; }
 .about-art img {
