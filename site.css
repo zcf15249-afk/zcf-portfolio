@@ -1125,3 +1125,27 @@ html { scroll-padding-top: 85px; }
 @media (max-width: 690px) {
   .home-intro h1 { font-size: clamp(3.05rem, 11vw, 4.9rem); }
 }
+
+/* Match each category frame to the artwork used on the home page. */
+.work-lanes { grid-template-columns: var(--category-columns); }
+.work-lane .lane-art {
+  block-size: auto;
+  aspect-ratio: var(--lane-ratio);
+  background: transparent;
+}
+.work-lane:not(.work-lane--fashion) .lane-art img { object-fit: contain; }
+.work-lane:hover .lane-art img { transform: none; }
+@media (max-width: 760px) {
+  .work-lanes { grid-template-columns: var(--compact-columns); }
+  .work-lane--fashion { grid-column: 1 / -1; }
+  .lane-copy { min-height: 0; }
+}
+@media (max-width: 420px) {
+  .lane-copy { grid-template-columns: minmax(0, 1fr); }
+  .lane-copy .arrow { justify-self: start; width: 20px; }
+}
+
+/* Reading text has no insertion caret. Search remains editable. */
+body { -webkit-user-select: none; user-select: none; caret-color: transparent; }
+a { cursor: pointer; }
+input[type="search"] { -webkit-user-select: text; user-select: text; caret-color: auto; cursor: text; }
